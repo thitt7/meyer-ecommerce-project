@@ -69,7 +69,8 @@ const ProductsPage = ({products}: {products: Array<Product>}) => {
     }
 
     console.log('NEW FILTERED: ', filtered)
-    setProducts(filtered);
+    // setProducts(filtered);
+    dispatch(set(filtered))
   };
 
   useEffect(() => {
@@ -91,7 +92,7 @@ const ProductsPage = ({products}: {products: Array<Product>}) => {
       <Box sx={{ width: '100%' }}>
       <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
       {
-        filteredProducts?.map((product: Product, i: number) => {
+        productState?.map((product: Product, i: number) => {
           return (
               <ProductCard key={i} product={product} />
           )
