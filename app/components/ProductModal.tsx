@@ -36,9 +36,9 @@ const ProductModal = ({ product, open, closeModal }: DialogProps) => {
                         <div className="color">
                             <p>Colors:</p>
                             <Stack direction="row" useFlexGap>
-                                {product.product_colors?.map((color: any) => {
+                                {product.product_colors?.map((color: any, i: number) => {
                                     return (
-                                        <div style={{background: color.hex_value}}className="circle" />
+                                        <div key={i} style={{background: color.hex_value}} className="circle" />
                                     )
                                 })}
                             </Stack>

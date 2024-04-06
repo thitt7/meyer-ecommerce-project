@@ -91,9 +91,9 @@ const ProductsPage = ({products}: {products: Array<Product>}) => {
       <Box sx={{ width: '100%' }}>
       <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
       {
-        filteredProducts?.map((product: Product) => {
+        filteredProducts?.map((product: Product, i: number) => {
           return (
-              <ProductCard product={product} />
+              <ProductCard key={i} product={product} />
           )
       })
       }
